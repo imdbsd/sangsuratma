@@ -1,0 +1,19 @@
+{
+  "name": "sangsuratma",
+  "version": "1.0.0",
+  "description": "im watching you",
+  "main": "index.js",
+  "author": "imdbsd (budisuryadarma0407@gmaio.com)",
+  "scripts": {
+    "start": "ts-node-dev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
