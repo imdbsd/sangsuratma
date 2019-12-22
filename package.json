@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/cheerio": "^0.22.15",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.3"
   },
