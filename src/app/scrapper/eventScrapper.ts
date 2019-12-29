@@ -27,9 +27,10 @@ const eventScrapper: EventScrapper = async params => {
 
       date = parseInt(date)
 
-      if (!isNaN(date)) {
-        now.setDate(date)
+      if (isNaN(date)) {
+        return false
       }
+      now.setDate(date)
 
       const eventTemplate: Event = {
         timestamp: now.toISOString(),
