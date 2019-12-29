@@ -9,6 +9,7 @@ const eventScrapper: EventScrapper = async params => {
     )
 
     const now = new Date()
+    now.setTime(0)
     now.setMonth(params.month - 1)
     now.setFullYear(params.year)
 
