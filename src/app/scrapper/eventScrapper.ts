@@ -2,6 +2,16 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 import { Event, EventScrapper } from '../types'
 
+const COLUMN_RERAINAN = 'right-column-1'
+const COLUMN_HARI_PERINGATAN = 'right-column-2'
+const COLUMN_HARI_RAYA_AGAMA = 'right-column-3'
+const COLUMN_PIODALAN = 'right-column-4'
+
+const RERAINAN = 'rerainan'
+const HARI_PERINGATAN = 'hari peringatan'
+const HARI_RAYA_AGAMA = 'hari raya agama'
+const PIODALAN = 'piodalan'
+
 const eventScrapper: EventScrapper = async params => {
   try {
     const { data: html } = await axios(
@@ -48,14 +58,14 @@ const eventScrapper: EventScrapper = async params => {
         return false
       }
 
-      if (id === 'right-column-1') {
-        eventTemplate.eventType = 'rerainan'
-      } else if (id === 'right-column-2') {
-        eventTemplate.eventType = 'hari peringatan'
-      } else if (id === 'right-column-3') {
-        eventTemplate.eventType = 'hari raya agama'
-      } else if (id === 'right-column-4') {
-        eventTemplate.eventType = 'piodalan'
+      if (id === COLUMN_RERAINAN) {
+        eventTemplate.eventType = RERAINAN
+      } else if (id === COLUMN_HARI_PERINGATAN) {
+        eventTemplate.eventType = HARI_PERINGATAN
+      } else if (id === COLUMN_HARI_RAYA_AGAMA) {
+        eventTemplate.eventType = HARI_RAYA_AGAMA
+      } else if (id === COLUMN_PIODALAN) {
+        eventTemplate.eventType = PIODALAN
       }
 
       const eventsNow = $(el)
