@@ -45,7 +45,7 @@ const eventScrapper: EventScrapper = async params => {
       const eventTemplate: Event = {
         timestamp: now.toISOString(),
         eventName: '',
-        eventType: '',
+        eventType: null,
       }
 
       const columnParent = $(el)
