@@ -9,8 +9,8 @@ export type Event = {
   eventName: string
   eventType: EventType | null
 }
-
-export type EventScrapperParams = { month: number; year: number }
+export type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+export type EventScrapperParams = { month: Month; year: number }
 export type EventScrapper = (
   params: EventScrapperParams
 ) => Promise<Event[] | null>
