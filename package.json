@@ -5,11 +5,18 @@
   "main": "index.js",
   "author": "imdbsd (budisuryadarma0407@gmaio.com)",
   "scripts": {
-    "start": "ts-node-dev"
+    "start": "ts-node-dev",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/preset-typescript": "^7.8.0",
     "@types/cheerio": "^0.22.15",
+    "@types/jest": "^24.0.25",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.3"
   },
