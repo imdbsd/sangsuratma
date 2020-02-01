@@ -15,7 +15,7 @@ const PIODALAN = 'piodalan'
 const eventScrapper: EventScrapper = async params => {
   try {
     const { data: html } = await axios(
-      `http://www.kalenderbali.info/?month${params.month}=$&year=${params.year}&submit=Tampilkan`
+      `http://www.kalenderbali.info/?month=${params.month}&year=${params.year}&submit=Tampilkan`
     )
 
     const now = new Date()
