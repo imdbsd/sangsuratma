@@ -1,5 +1,5 @@
 export type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
-export type Date =
+export type DateNumber =
   | 1
   | 2
   | 3
@@ -203,7 +203,7 @@ export type EventScrapper = (
 
 export type Day = {
   timestamp: string
-  date: Date
+  date: DateNumber
   day_name: {
     balinese: BalineseDayName
     bahasa: BahasaDayName
@@ -240,5 +240,5 @@ export type Day = {
   urip: string
 }
 
-export type DayScrapperParams = { date: Date; month: Month; year: number }
+export type DayScrapperParams = { date: DateNumber; month: Month; year: number }
 export type DayScrapper = (params: DayScrapperParams) => Promise<Day | null>
