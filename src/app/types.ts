@@ -125,6 +125,7 @@ export type Wuku =
   | 'Klawu'
   | 'Dukut'
   | 'Watugunung'
+
 export type Ingkel = 'Wong' | 'Sato' | 'Mina' | 'Manuk' | 'Taru' | 'Buku'
 export type Sasih =
   | 'Kasa'
@@ -205,39 +206,39 @@ export type Day = {
   timestamp: string
   date: DateNumber
   day_name: {
-    balinese: BalineseDayName
-    bahasa: BahasaDayName
-    english: EnglishDayName
+    balinese: BalineseDayName | null
+    bahasa: BahasaDayName | null
+    english: EnglishDayName | null
   }
   month: {
-    index: Month
-    english: MonthEnglishName
-    bahasa: MonthBahasaName
+    index: Month | null
+    english: MonthEnglishName | null
+    bahasa: MonthBahasaName | null
   }
   year: {
-    masehi: number
-    caka: number
+    masehi: number | null
+    caka: number | null
   }
   wewaran: {
     ekawara: Ekawara | null
-    dwiwara: Dwiwara
-    triwara: Triwara
-    caturwara: Caturwara
-    pancawara: Pancawara
-    sadwara: Sadwara
-    saptawara: Saptawara
-    astawara: Astawara
-    sangawara: Sangawara
-    dasawara: Dasawara
+    dwiwara: Dwiwara | null
+    triwara: Triwara | null
+    caturwara: Caturwara | null
+    pancawara: Pancawara | null
+    sadwara: Sadwara | null
+    saptawara: Saptawara | null
+    astawara: Astawara | null
+    sangawara: Sangawara | null
+    dasawara: Dasawara | null
   }
   penanggal_pangelong: {
-    status: PenanggalPangelonStatus
-    value: number
+    status: PenanggalPangelonStatus | null
+    value: number | null
   }
-  wuku: Wuku
-  ingkel: Ingkel
-  sasih: Sasih
-  urip: string
+  wuku: Wuku | null
+  ingkel: Ingkel | null
+  sasih: Sasih | null
+  urip: string | null
 }
 
 export type DayScrapperParams = { date: DateNumber; month: Month; year: number }
