@@ -135,7 +135,7 @@ export type Sasih =
   | 'Kalima'
   | 'Kanem'
   | 'Kapitu'
-  | 'Kawolu'
+  | 'Kaulu'
   | 'Kasanga'
   | 'Kadasa'
   | 'Jiestha'

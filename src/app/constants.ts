@@ -30,3 +30,30 @@ export const wuku = [
   'Dukut',
   'Watugunung',
 ] as const
+
+export const saptawara = [
+  'Redite',
+  'Soma',
+  'Anggara',
+  'Buda',
+  'Wraspati',
+  'Sukra',
+  'Saniscara',
+] as const
+
+export const sasih = [
+  'Kasa',
+  'Karo',
+  'Katiga',
+  'Kapat',
+  'Kalima',
+  'Kanem',
+  'Kapitu',
+  'Kaulu',
+  'Kasanga',
+  'Kadasa',
+  'Jiestha',
+  'Sadha',
+] as const
+
+export const penanggalPangelong = ['Penanggal', 'Pangelong'] as const
