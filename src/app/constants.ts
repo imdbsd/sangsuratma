@@ -30,7 +30,10 @@ export const wuku = [
   'Dukut',
   'Watugunung',
 ] as const
-
+export const ekawara = ['Luang'] as const
+export const dwiwara = ['Menga', 'Pepet'] as const
+export const triwara = ['Pasah', 'Beteng', 'Kajeng'] as const
+export const caturwara = ['Sri', 'Laba', 'Jaya', 'Menala'] as const
 export const saptawara = [
   'Redite',
   'Soma',
