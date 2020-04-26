@@ -9,7 +9,12 @@ import {
   Dwiwara,
   Triwara,
   Caturwara,
+  Pancawara,
+  Sadwara,
   Saptawara,
+  Astawara,
+  Sangawara,
+  Dasawara,
   Sasih,
   PenanggalPangelonStatus,
 } from '../types'
@@ -19,7 +24,12 @@ import {
   dwiwara as dwiwaraList,
   triwara as triwaraList,
   caturwara as caturwaraList,
+  pancawara as pancawaraList,
+  sadwara as sadwaraList,
   saptawara as saptawaraList,
+  astawara as astawaraList,
+  sangawara as sangawaraList,
+  dasawara as dasawaraList,
   sasih as sasihList,
 } from '../constants'
 
@@ -157,14 +167,47 @@ export const isValidEkawara = (ekawara: string): ekawara is Ekawara =>
 export const isValidDwiwara = (dwiwara: string): dwiwara is Dwiwara =>
   dwiwaraList.includes(dwiwara as Dwiwara)
 
-export const isValidSaptawara = (saptawara: string): saptawara is Saptawara =>
-  saptawaraList.includes(saptawara as Saptawara)
-
 export const isValidTriwara = (triwara: string): triwara is Triwara =>
   triwaraList.includes(triwara as Triwara)
 
 export const isValidCaturwara = (caturwara: string): caturwara is Caturwara =>
   caturwaraList.includes(caturwara as Caturwara)
+
+export const isValidPancawara = (pancawara: string): pancawara is Pancawara =>
+  pancawaraList.includes(pancawara as Pancawara)
+
+export const isValidSadwara = (sadwara: string): sadwara is Sadwara =>
+  sadwaraList.includes(sadwara as Sadwara)
+
+export const isValidSaptawara = (saptawara: string): saptawara is Saptawara =>
+  saptawaraList.includes(saptawara as Saptawara)
+
+export const isValidAstawara = (astawara: string): astawara is Astawara =>
+  astawaraList.includes(astawara as Astawara)
+
+const MAP_INVALID_SANGAWARA: { [key: string]: Sangawara } = {
+  Urukung: 'Urungan',
+}
+export const isValidSangawara = (sangawara: string): sangawara is Sangawara => {
+  if (
+    sangawaraList.includes(sangawara as Sangawara) ||
+    typeof MAP_INVALID_SANGAWARA[sangawara] !== 'undefined'
+  ) {
+    return true
+  }
+  return false
+}
+
+export const validateSangawaraValue = (sangawara: Sangawara): Sangawara => {
+  const val = MAP_INVALID_SANGAWARA[sangawara]
+  if (val) {
+    return val
+  }
+  return sangawara
+}
+
+export const isValidDasawara = (dasawara: string): dasawara is Dasawara =>
+  dasawaraList.includes(dasawara as Dasawara)
 
 export const isValidSasih = (sasih: string): sasih is Sasih =>
   sasihList.includes(sasih as Sasih)
@@ -175,4 +218,11 @@ export const getPenanggalPangelongStatus = (
   if (status.indexOf('red') !== -1) return 'Penanggal'
   else if (status.indexOf('black') !== -1) return 'Pangelong'
   return null
+}
+
+// the year  in masehi were caka year equal to 0
+const theFirstCakaMasehiYear = 78
+
+export const getCakaYears = (masehi: number): number => {
+  return masehi - theFirstCakaMasehiYear
 }
