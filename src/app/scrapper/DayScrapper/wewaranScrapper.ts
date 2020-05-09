@@ -38,7 +38,7 @@ const wewaranScrapper = async (params: Params): Promise<Wewaran | null> => {
     const { data: html } = await axios(
       `http://www.kalenderbali.info/kalender/detailHari/${params.date}/${params.month}/${params.year}/hitam/html`
     )
-    let $ = cheerio.load(html)
+    const $ = cheerio.load(html)
     const leftCell = $(LEFT_CELL_SELECTOR).html()
     const centerUpCell = $(CENTER_UP_CELL_SELECTOR).html()
     const rightCell = $(RIGHT_CELL_SELECTOR).html()
