@@ -1,9 +1,10 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
-import { DayScrapperParams as Params, Wuku } from '../../types'
 import { isValidWuku } from '../utils'
+import { getSelector } from './classnameSelector'
+import { DayScrapperParams as Params, Wuku } from '../../types'
 
-const CENTER_UP_CELL_SELECTOR = '.isitanggal.hitam.tengahbawah'
+const selector = getSelector('CENTER_UP_CELL_SELECTOR')
 
 const wukuScrapper = async (params: Params): Promise<Wuku | null> => {
   try {
@@ -11,7 +12,7 @@ const wukuScrapper = async (params: Params): Promise<Wuku | null> => {
       `http://www.kalenderbali.info/kalender/detailHari/${params.date}/${params.month}/${params.year}/hitam/html`
     )
     const $ = cheerio.load(html)
-    const centerUpCell = $(CENTER_UP_CELL_SELECTOR).html()
+    const centerUpCell = $(selector).html()
 
     if (!centerUpCell) throw new Error('No centerUpCell content')
 
