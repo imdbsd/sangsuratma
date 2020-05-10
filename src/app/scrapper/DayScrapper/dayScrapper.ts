@@ -57,7 +57,6 @@ const dayScrapper: DayScrapper = async (params) => {
       urip,
     }
 
-    console.log({ day })
     return day
   } catch (e) {
     console.log(e)
@@ -65,9 +64,4 @@ const dayScrapper: DayScrapper = async (params) => {
   }
 }
 
-// export default dayScrapper
-dayScrapper({
-  date: 22,
-  month: 1,
-  year: 2020,
-})
+export default dayScrapper
