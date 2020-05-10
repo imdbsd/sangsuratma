@@ -93,7 +93,7 @@ export type EventType =
   | 'hari raya agama'
   | 'piodalan'
 
-export type PenanggalPangelonStatus = 'Penanggal' | 'Pangelong'
+export type PenanggalPangelongStatus = 'Penanggal' | 'Pangelong'
 export type Wuku =
   | 'Sinta'
   | 'Landep'
@@ -202,6 +202,24 @@ export type EventScrapper = (
   params: EventScrapperParams
 ) => Promise<Event[] | null>
 
+export type Wewaran = {
+  ekawara: Ekawara | null
+  dwiwara: Dwiwara | null
+  triwara: Triwara | null
+  caturwara: Caturwara | null
+  pancawara: Pancawara | null
+  sadwara: Sadwara | null
+  saptawara: Saptawara | null
+  astawara: Astawara | null
+  sangawara: Sangawara | null
+  dasawara: Dasawara | null
+}
+
+export type PenanggalPangelong = {
+  status: PenanggalPangelongStatus | null
+  value: number | null
+}
+
 export type Day = {
   timestamp: string
   date: DateNumber
@@ -219,22 +237,8 @@ export type Day = {
     masehi: number | null
     caka: number | null
   }
-  wewaran: {
-    ekawara: Ekawara | null
-    dwiwara: Dwiwara | null
-    triwara: Triwara | null
-    caturwara: Caturwara | null
-    pancawara: Pancawara | null
-    sadwara: Sadwara | null
-    saptawara: Saptawara | null
-    astawara: Astawara | null
-    sangawara: Sangawara | null
-    dasawara: Dasawara | null
-  }
-  penanggal_pangelong: {
-    status: PenanggalPangelonStatus | null
-    value: number | null
-  }
+  wewaran: Wewaran
+  penanggal_pangelong: PenanggalPangelong
   wuku: Wuku | null
   ingkel: Ingkel | null
   sasih: Sasih | null
