@@ -102,3 +102,4 @@ export const sasih = [
 ] as const
 
 export const penanggalPangelong = ['Penanggal', 'Pangelong'] as const
+export const ingkel = ['Wong', 'Sato', 'Mina', 'Manuk', 'Taru', 'Buku'] as const

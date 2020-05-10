@@ -16,7 +16,8 @@ import {
   Sangawara,
   Dasawara,
   Sasih,
-  PenanggalPangelonStatus,
+  Ingkel,
+  PenanggalPangelongStatus,
 } from '../types'
 import {
   wuku as wukuList,
@@ -31,6 +32,7 @@ import {
   sangawara as sangawaraList,
   dasawara as dasawaraList,
   sasih as sasihList,
+  ingkel as ingkelList,
 } from '../constants'
 
 export const getBalineseDayName = (day: number): BalineseDayName | null => {
@@ -212,9 +214,12 @@ export const isValidDasawara = (dasawara: string): dasawara is Dasawara =>
 export const isValidSasih = (sasih: string): sasih is Sasih =>
   sasihList.includes(sasih as Sasih)
 
+export const isValidIngkel = (ingkel: string): ingkel is Ingkel =>
+  ingkelList.includes(ingkel as Ingkel)
+
 export const getPenanggalPangelongStatus = (
   status: string
-): PenanggalPangelonStatus | null => {
+): PenanggalPangelongStatus | null => {
   if (status.indexOf('red') !== -1) return 'Penanggal'
   else if (status.indexOf('black') !== -1) return 'Pangelong'
   return null
