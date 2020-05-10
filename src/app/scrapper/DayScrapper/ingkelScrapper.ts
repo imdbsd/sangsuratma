@@ -26,7 +26,7 @@ const ingkelScrapper = async (params: Params): Promise<Ingkel | null> => {
     const weekIndex = getWeekOfMonth(
       new Date(params.year, params.month - 1, params.date)
     )
-    const ingkel = ingkels[weekIndex]
+    const ingkel = ingkels[weekIndex - 1]
 
     if (!isValidIngkel(ingkel)) throw new Error('Invlalid ingkel value')
     return ingkel
