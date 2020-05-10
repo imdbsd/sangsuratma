@@ -4,13 +4,13 @@ import {
   MONTH_SCRAPPING_TEST,
   YEAR_SCRAPPING_TEST,
 } from './constants'
-import dayScrapper from '../app/scrapper/DayScrapper/dayScrapper'
-import wukuScrapper from '../app/scrapper/DayScrapper/wukuScrapper'
-import uripScrapper from '../app/scrapper/DayScrapper/uripScrapper'
-import sasihScrapper from '../app/scrapper/DayScrapper/sasihScrapper'
-import ingkelScrapper from '../app/scrapper/DayScrapper/ingkelScrapper'
-import wewaranScrapper from '../app/scrapper/DayScrapper/wewaranScrapper'
-import penanggalPangelongScrapper from '../app/scrapper/DayScrapper/penanggalPangelongScrapper'
+import dayScrapper from '../src/app/scrapper/DayScrapper/dayScrapper'
+import wukuScrapper from '../src/app/scrapper/DayScrapper/wukuScrapper'
+import uripScrapper from '../src/app/scrapper/DayScrapper/uripScrapper'
+import sasihScrapper from '../src/app/scrapper/DayScrapper/sasihScrapper'
+import ingkelScrapper from '../src/app/scrapper/DayScrapper/ingkelScrapper'
+import wewaranScrapper from '../src/app/scrapper/DayScrapper/wewaranScrapper'
+import penanggalPangelongScrapper from '../src/app/scrapper/DayScrapper/penanggalPangelongScrapper'
 
 describe('Day Scrapper Test', () => {
   beforeEach(() => {
