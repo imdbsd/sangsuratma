@@ -59,7 +59,6 @@ const dayScrapper: DayScrapper = async (params) => {
 
     return day
   } catch (e) {
-    console.log(e)
     return null
   }
 }

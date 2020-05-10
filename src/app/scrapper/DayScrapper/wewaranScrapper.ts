@@ -92,7 +92,6 @@ const wewaranScrapper = async (params: Params): Promise<Wewaran | null> => {
 
     return wewaran
   } catch (err) {
-    console.log(err)
     return null
   }
 }
