@@ -1,9 +1,10 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
 import { getPenanggalPangelongStatus } from '../utils'
+import { getSelector } from './classnameSelector'
 import { DayScrapperParams as Params, PenanggalPangelong } from '../../types'
 
-const CENTER_UP_CELL_SELECTOR = '.isitanggal.hitam.tengahbawah'
+const selector = getSelector('CENTER_UP_CELL_SELECTOR')
 
 const penanggalPangelongScrapper = async (
   params: Params
@@ -20,7 +21,7 @@ const penanggalPangelongScrapper = async (
 
     let $ = cheerio.load(html)
 
-    const centerUpCell = $(CENTER_UP_CELL_SELECTOR).html()
+    const centerUpCell = $(selector).html()
     if (!centerUpCell) throw new Error('No centerUpCell content')
     const centerUpCellContent = centerUpCell.trim().split('<br>')
 
