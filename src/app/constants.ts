@@ -26,7 +26,7 @@ export const wuku = [
   'Bala',
   'Ugu',
   'Wayang',
-  'Klawu',
+  'Kelawu',
   'Dukut',
   'Watugunung',
 ] as const
