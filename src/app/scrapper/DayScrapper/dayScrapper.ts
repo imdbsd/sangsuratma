@@ -3,15 +3,16 @@ import wukuScrapper from './wukuScrapper'
 import uripScrapper from './uripScrapper'
 import sasihScrapper from './sasihScrapper'
 import ingkelScrapper from './ingkelScrapper'
+import bhataraScrapper from './bhataraScrapper'
 import wewaranScrapper from './wewaranScrapper'
 import penanggalPangelongScrapper from './penanggalPangelongScrapper'
 import {
-  getBalineseDayName,
-  getEnglishDayName,
-  getBahasaDayName,
-  getBahasaMonthName,
-  getEnglishMonthName,
   getCakaYears,
+  getBahasaDayName,
+  getEnglishDayName,
+  getBahasaMonthName,
+  getBalineseDayName,
+  getEnglishMonthName,
 } from '../utils'
 
 const dayScrapper: DayScrapper = async (params) => {
@@ -19,11 +20,12 @@ const dayScrapper: DayScrapper = async (params) => {
     const urip = await uripScrapper(params)
     const wuku = await wukuScrapper(params)
     const sasih = await sasihScrapper(params)
+    const bhatara = await bhataraScrapper(wuku || '')
     const ingkel = await ingkelScrapper(params)
     const wewaran = await wewaranScrapper(params)
     const penanggalPangelong = await penanggalPangelongScrapper(params)
 
-    if (!wewaran || !penanggalPangelong || !wuku || !ingkel)
+    if (!wewaran || !penanggalPangelong || !wuku || !ingkel || !bhatara)
       throw new Error('Failed to fetch')
 
     const scrappedDay = new Date()
@@ -49,12 +51,13 @@ const dayScrapper: DayScrapper = async (params) => {
         masehi: params.year,
         caka: getCakaYears(params.year),
       },
-      wewaran,
       penanggal_pangelong: penanggalPangelong,
       wuku,
-      ingkel,
-      sasih,
       urip,
+      sasih,
+      ingkel,
+      bhatara,
+      wewaran,
     }
 
     return day

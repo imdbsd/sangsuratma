@@ -122,7 +122,7 @@ export type Wuku =
   | 'Bala'
   | 'Ugu'
   | 'Wayang'
-  | 'Klawu'
+  | 'Kelawu'
   | 'Dukut'
   | 'Watugunung'
 
@@ -192,6 +192,42 @@ export type Dasawara =
   | 'Dewa'
   | 'Raksasa'
 
+export type Bhatara =
+  | 'Bhatara Yamadipati'
+  | 'Bhatara Mahadewa'
+  | 'Bhatara Mahayekti'
+  | 'Bhatara Langsur'
+  | 'Bhatara Bayu'
+  | 'Bhatara Candra'
+  | 'Bhatara Asmara'
+  | 'Bhatara Maharesi'
+  | 'Bhatara Sambu'
+  | 'Bhatara Gana'
+  | 'Bhatara Kamajaya'
+  | 'Bhatara Indra'
+  | 'Bhatara Kala'
+  | 'Bhatara Brahma'
+  | 'Bhatara Guritna'
+  | 'Bhatara Tantra'
+  | 'Bhatara Wisnu'
+  | 'Bhatara Surenggana'
+  | 'Bhatara Siwa'
+  | 'Bhatara Basuki'
+  | 'Bhatara Sakri'
+  | 'Bhatara Kuwera'
+  | 'Bhatara Citrayoga'
+  | 'Bhatara Bisma'
+  | 'Bhatara Durga'
+  | 'Bhatara Singajalma'
+  | 'Bhatara Sri'
+  | 'Bhatara Sedana'
+  | 'Bhatara Baruna'
+  | 'Bhatara Anantaboga'
+  | 'Bhatara Yamadipati'
+  | 'Bhatara Mahadewa'
+  | 'Bhatara Mahayekti'
+  | 'Bhatara Langsur'
+
 export type Event = {
   timestamp: string
   eventName: string
@@ -243,6 +279,7 @@ export type Day = {
   ingkel: Ingkel | null
   sasih: Sasih | null
   urip: string | null
+  bhatara: Bhatara
 }
 
 export type DayScrapperParams = { date: DateNumber; month: Month; year: number }
