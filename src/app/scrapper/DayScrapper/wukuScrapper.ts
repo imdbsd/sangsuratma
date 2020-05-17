@@ -1,7 +1,7 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
 import { isValidWuku } from '../utils'
-import { getSelector } from './classnameSelector'
+import { getSelector } from './classNameSelector'
 import { DayScrapperParams as Params, Wuku } from '../../types'
 
 const selector = getSelector('CENTER_UP_CELL_SELECTOR')
