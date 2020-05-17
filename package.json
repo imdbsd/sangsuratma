@@ -2,10 +2,11 @@
   "name": "sangsuratma",
   "version": "1.0.0",
   "description": "im watching you",
-  "main": "index.js",
+  "main": "./src/server.ts",
   "author": "imdbsd (budisuryadarma0407@gmaio.com)",
   "scripts": {
-    "start": "ts-node-dev",
+    "start": "node -v",
+    "start-dev": "ts-node-dev ./src/server.ts",
     "test": "jest"
   },
   "license": "MIT",
