@@ -2,7 +2,7 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 import getWeekOfMonth from 'date-fns/getWeekOfMonth'
 import { isValidIngkel } from '../utils'
-import { getSelector } from './classnameSelector'
+import { getSelector } from './classNameSelector'
 import { DayScrapperParams as Params, Ingkel } from '../../types'
 
 const selector = getSelector('ALL_INGKEL_CELL_SELECTOR')
