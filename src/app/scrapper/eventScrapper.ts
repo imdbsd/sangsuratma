@@ -1,4 +1,4 @@
-import axios from './node_modules/axios'
+import axios from 'axios'
 import cheerio from 'cheerio'
 import { Event, EventScrapper } from '../types'
 
