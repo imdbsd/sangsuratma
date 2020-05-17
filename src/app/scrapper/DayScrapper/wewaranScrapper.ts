@@ -13,13 +13,12 @@ import {
   isValidDasawara,
   validateSangawaraValue,
 } from '../utils'
+import { getSelector } from './classNameSelector'
 import { DayScrapperParams as Params, Wewaran } from '../../types'
 
-const LEFT_CELL_SELECTOR =
-  'table.kalenderCellDetail tr:nth-child(2) .isitanggal.hitam.kiri'
-const CENTER_UP_CELL_SELECTOR = '.isitanggal.hitam.tengahbawah'
-const RIGHT_CELL_SELECTOR =
-  'table.kalenderCellDetail tr:nth-child(2) .isitanggal.hitam.kanan'
+const LEFT_CELL_SELECTOR = getSelector('LEFT_CELL_SELECTOR')
+const RIGHT_CELL_SELECTOR = getSelector('RIGHT_CELL_SELECTOR')
+const CENTER_UP_CELL_SELECTOR = getSelector('CENTER_UP_CELL_SELECTOR')
 
 const wewaranScrapper = async (params: Params): Promise<Wewaran | null> => {
   const wewaran: Wewaran = {
