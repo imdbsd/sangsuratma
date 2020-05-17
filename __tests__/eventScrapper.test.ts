@@ -1,4 +1,4 @@
-import eventScrapper from '../src/app/scrapper/eventScrapper'
+import eventScrapper from '../src/App/scrapper/eventScrapper'
 import {
   EVENT_JANUARY_2020,
   MONTH_SCRAPPING_TEST,

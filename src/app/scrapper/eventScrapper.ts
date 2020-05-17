@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './node_modules/axios'
 import cheerio from 'cheerio'
 import { Event, EventScrapper } from '../types'
 
@@ -12,7 +12,7 @@ const HARI_PERINGATAN = 'hari peringatan'
 const HARI_RAYA_AGAMA = 'hari raya agama'
 const PIODALAN = 'piodalan'
 
-const eventScrapper: EventScrapper = async params => {
+const eventScrapper: EventScrapper = async (params) => {
   try {
     const { data: html } = await axios(
       `http://www.kalenderbali.info/?month=${params.month}&year=${params.year}&submit=Tampilkan`
@@ -30,10 +30,7 @@ const eventScrapper: EventScrapper = async params => {
         return false
       }
 
-      let date: string | number = $(el)
-        .find('td')
-        .first()
-        .text()
+      let date: string | number = $(el).find('td').first().text()
 
       date = parseInt(date)
 
@@ -48,11 +45,7 @@ const eventScrapper: EventScrapper = async params => {
         eventType: null,
       }
 
-      const columnParent = $(el)
-        .parent()
-        .parent()
-        .parent()
-        .parent()
+      const columnParent = $(el).parent().parent().parent().parent()
       const id = $(columnParent).attr('id')
       if (!id) {
         return false
@@ -68,13 +61,9 @@ const eventScrapper: EventScrapper = async params => {
         eventTemplate.eventType = PIODALAN
       }
 
-      const eventsNow = $(el)
-        .children('td')
-        .last()
-        .text()
-        .split(';')
+      const eventsNow = $(el).children('td').last().text().split(';')
 
-      eventsNow.forEach(event => {
+      eventsNow.forEach((event) => {
         events.push({
           ...eventTemplate,
           eventName: event.trim(),
