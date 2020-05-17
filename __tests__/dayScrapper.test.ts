@@ -10,6 +10,7 @@ import uripScrapper from '../src/app/scrapper/DayScrapper/uripScrapper'
 import sasihScrapper from '../src/app/scrapper/DayScrapper/sasihScrapper'
 import ingkelScrapper from '../src/app/scrapper/DayScrapper/ingkelScrapper'
 import wewaranScrapper from '../src/app/scrapper/DayScrapper/wewaranScrapper'
+import bhataraScrapper from '../src/app/scrapper/DayScrapper/bhataraScrapper'
 import penanggalPangelongScrapper from '../src/app/scrapper/DayScrapper/penanggalPangelongScrapper'
 
 describe('Day Scrapper Test', () => {
@@ -81,6 +82,14 @@ describe('Day Scrapper Test', () => {
 
     expect(wewaran).not.toBeNull()
     expect(wewaran).toStrictEqual(DAY_22_JANUARY_2020.wewaran)
+  })
+
+  test('Get bhatara from 22 Janary 2020', async () => {
+    const wuku = DAY_22_JANUARY_2020.wuku
+    const bhatara = await bhataraScrapper(wuku)
+
+    expect(bhatara).not.toBeNull()
+    expect(bhatara).toStrictEqual(DAY_22_JANUARY_2020.bhatara)
   })
 
   test('Get day detail from 22 January 2020', async () => {

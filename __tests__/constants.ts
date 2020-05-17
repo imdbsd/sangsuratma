@@ -101,4 +101,5 @@ export const DAY_22_JANUARY_2020 = {
   ingkel: 'Wong',
   sasih: 'Kapitu',
   urip: '7+9',
+  bhatara: 'Bhatara Asmara',
 }
