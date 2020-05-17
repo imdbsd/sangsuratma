@@ -122,7 +122,7 @@ export type Wuku =
   | 'Bala'
   | 'Ugu'
   | 'Wayang'
-  | 'Klawu'
+  | 'Kelawu'
   | 'Dukut'
   | 'Watugunung'
 
