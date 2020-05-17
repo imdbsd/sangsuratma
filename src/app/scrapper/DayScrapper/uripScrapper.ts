@@ -1,6 +1,6 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
-import { getSelector } from './classnameSelector'
+import { getSelector } from './classNameSelector'
 import { DayScrapperParams as Params } from '../../types'
 
 const selector = getSelector('LEFT_CELL_SELECTOR')
