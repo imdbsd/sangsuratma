@@ -5,7 +5,7 @@ const parseDateNumber = (data: any): DateNumber => {
   if (parsedData >= 1 && parsedData <= 31) {
     return parsedData as DateNumber
   }
-  throw Error('Invalid Date')
+  throw Error('Cannot parsed value to valid Date')
 }
 
 export default parseDateNumber
