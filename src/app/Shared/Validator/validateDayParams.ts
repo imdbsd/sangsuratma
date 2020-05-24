@@ -20,20 +20,16 @@ const paramsSchema = yup.object().shape<ParamsShape>({
     .string()
     .required()
     .test('DateNumber-test', 'Invalid date', (date: string) => {
-      const parsedDate = parseInt(date)
-      if (isNaN(parsedDate)) return false
-
-      if (parsedDate < 1 || parsedDate > 31) return false
-
+      const parsedDate = parseDateNumber(date)
+      if (!parsedDate || parsedDate < 1 || parsedDate > 31) return false
       return true
     }),
   month: yup
     .string()
     .required()
     .test('MonthNumber-test', 'Invalid Month', (month: string) => {
-      const parsedMonth = parseInt(month)
-      if (isNaN(parsedMonth)) return false
-      if (parsedMonth < 1 || parsedMonth > 12) return false
+      const parsedMonth = parseMonth(month)
+      if (!parsedMonth || parsedMonth < 1 || parsedMonth > 12) return false
       return true
     }),
   year: yup
@@ -47,11 +43,16 @@ const paramsSchema = yup.object().shape<ParamsShape>({
     }),
 })
 
-const parseParams = (params: ParamsShape): DayScrapperParams => ({
-  date: parseDateNumber(params.date),
-  month: parseMonth(params.month),
-  year: parseInt(params.year),
-})
+const parseParams = (params: ParamsShape): DayScrapperParams => {
+  const date = parseDateNumber(params.date)
+  const month = parseMonth(params.month)
+  if (!date || !month) throw new Error('Cannot parse params')
+  return {
+    date,
+    month,
+    year: parseInt(params.year),
+  }
+}
 
 const validateDayParams: ValidateDayParams = async (params) => {
   try {
