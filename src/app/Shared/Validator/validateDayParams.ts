@@ -1,21 +1,9 @@
 import * as yup from 'yup'
-import { DayScrapperParams } from '../../types'
-import { parseDateNumber, parseMonth } from '../Parser'
+import { parseMonth, parseDateNumber, DayParamsShape } from '../Parser'
 
-type ValidateDayResponse = {
-  isValid: boolean
-  data?: DayScrapperParams
-  error?: Error
-}
-type ValidateDayParams = (params: any) => Promise<ValidateDayResponse>
+type ValidateDayParams = (params: any) => Promise<boolean>
 
-type ParamsShape = {
-  date: string
-  month: string
-  year: string
-}
-
-const paramsSchema = yup.object().shape<ParamsShape>({
+const paramsSchema = yup.object().shape<DayParamsShape>({
   date: yup
     .string()
     .required()
@@ -43,31 +31,13 @@ const paramsSchema = yup.object().shape<ParamsShape>({
     }),
 })
 
-const parseParams = (params: ParamsShape): DayScrapperParams => {
-  const date = parseDateNumber(params.date)
-  const month = parseMonth(params.month)
-  if (!date || !month) throw new Error('Cannot parse params')
-  return {
-    date,
-    month,
-    year: parseInt(params.year),
-  }
-}
-
 const validateDayParams: ValidateDayParams = async (params) => {
   try {
     const validate = await paramsSchema.validate(params)
     const isValid = !!validate
-
-    return {
-      isValid,
-      data: parseParams(params),
-    }
+    return isValid
   } catch (err) {
-    return {
-      isValid: false,
-      error: new Error(err.message),
-    }
+    throw new Error(err.message)
   }
 }
 
