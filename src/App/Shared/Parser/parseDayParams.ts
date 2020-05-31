@@ -12,8 +12,16 @@ const parseDayParams = (
   params: DayParamsShape,
   excludeDate: boolean
 ): DayScrapperParams => {
-  const date = parseDateNumber(params.date)
   const month = parseMonth(params.month)
+  if (excludeDate) {
+    if (!month) throw new Error('Cannot parse params')
+    return {
+      month,
+      year: parseInt(params.year),
+    }
+  }
+
+  const date = parseDateNumber(params.date)
   if ((!date && !excludeDate) || !month) throw new Error('Cannot parse params')
   return {
     date,

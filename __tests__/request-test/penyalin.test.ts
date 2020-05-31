@@ -2,6 +2,7 @@ import request from 'supertest'
 import app from '../../src/App/app'
 import {
   queryString,
+  EVENT_JANUARY_2020,
   DAY_22_JANUARY_2020,
   EVENT_15_JANUARY_2020,
 } from '../constants'
@@ -112,5 +113,15 @@ describe('API requests test', () => {
     expect(res.status).toBe(200)
     expect(res.header['content-type']).toContain('application/json')
     expect(res.body).toStrictEqual(EVENT_15_JANUARY_2020)
+  })
+
+  test('Request events from Januari 2020', async () => {
+    const res = await request(app).get(
+      `/penyalin/events?${queryString.JANUARY_2020}`
+    )
+
+    expect(res.status).toBe(200)
+    expect(res.header['content-type']).toContain('application/json')
+    expect(res.body).toStrictEqual(EVENT_JANUARY_2020)
   })
 })

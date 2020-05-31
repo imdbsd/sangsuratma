@@ -11,9 +11,9 @@ const validateParamsMiddleware = async (
   next: Function
 ) => {
   try {
-    const canExcludeDate = !pathThatAllowedWithoutDate.includes(req.path)
+    const canExcludeDate = pathThatAllowedWithoutDate.includes(req.path)
     const validateDayParams = initValidator({
-      requireDate: canExcludeDate,
+      requireDate: !canExcludeDate,
     })
     const isValid = await validateDayParams(req.query)
     if (isValid) {

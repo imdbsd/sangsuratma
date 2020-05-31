@@ -120,4 +120,5 @@ export const EVENT_15_JANUARY_2020 = [
 export const queryString = {
   '15_JANUARY_2020': 'date=15&month=1&year=2020',
   '22_JANUARY_2020': 'date=22&month=1&year=2020',
+  JANUARY_2020: 'month=1&year=2020',
 }

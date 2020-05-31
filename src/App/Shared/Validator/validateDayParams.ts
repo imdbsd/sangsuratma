@@ -6,15 +6,18 @@ type ValidateDayParams = (options: Options) => (params: any) => Promise<boolean>
 
 const paramsSchema = (options: Options) =>
   yup.object().shape<DayParamsShape>({
-    date: (options.requireDate ? yup.string().required() : yup.string()).test(
-      'DateNumber-test',
-      'Invalid date',
-      (date: string) => {
-        const parsedDate = parseDateNumber(date)
-        if (!parsedDate || parsedDate < 1 || parsedDate > 31) return false
-        return true
-      }
-    ),
+    ...(options.requireDate
+      ? {
+          date: yup
+            .string()
+            .required()
+            .test('DateNumber-test', 'Invalid date', (date: string) => {
+              const parsedDate = parseDateNumber(date)
+              if (!parsedDate || parsedDate < 1 || parsedDate > 31) return false
+              return true
+            }),
+        }
+      : {}),
     month: yup
       .string()
       .required()
