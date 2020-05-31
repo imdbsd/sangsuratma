@@ -283,8 +283,13 @@ export type Day = {
 }
 
 export type DayScrapperParams = {
-  date?: DateNumber
+  date: DateNumber
   month: Month
   year: number
 }
 export type DayScrapper = (params: DayScrapperParams) => Promise<Day | null>
+export type RouteParams = {
+  date?: DateNumber
+  month: Month
+  year: number
+}

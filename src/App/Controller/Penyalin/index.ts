@@ -1,6 +1,6 @@
 import { Request as ExpressRequest } from 'express'
 import { ParamsDictionary } from 'express-serve-static-core'
-import { DayScrapperParams } from '../../types'
+import { RouteParams } from '../../types'
 
 export type QueryString = {
   date?: string
@@ -14,7 +14,7 @@ export type Request = ExpressRequest<
   any,
   QueryString
 > & {
-  dayParams?: DayScrapperParams
+  dayParams?: RouteParams
 }
 
 export { default as penyalinDay } from './penyalinDay'
