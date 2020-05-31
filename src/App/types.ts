@@ -282,5 +282,9 @@ export type Day = {
   bhatara: Bhatara
 }
 
-export type DayScrapperParams = { date: DateNumber; month: Month; year: number }
+export type DayScrapperParams = {
+  date?: DateNumber
+  month: Month
+  year: number
+}
 export type DayScrapper = (params: DayScrapperParams) => Promise<Day | null>

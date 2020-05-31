@@ -17,6 +17,8 @@ const penyalinEvents = async (req: Request, res: Response) => {
         `Cannot find events for query: ${JSON.stringify(dayParams)}`
       )
 
+    if (!dayParams.date) return res.status(200).json(events)
+
     const now = new Date()
     now.setTime(0)
     now.setDate(dayParams.date)

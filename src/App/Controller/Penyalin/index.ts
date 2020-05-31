@@ -3,7 +3,7 @@ import { ParamsDictionary } from 'express-serve-static-core'
 import { DayScrapperParams } from '../../types'
 
 export type QueryString = {
-  date: string
+  date?: string
   year: string
   month: string
 }
