@@ -5,7 +5,7 @@ import wukuScrapper from '../../Scrapper/DayScrapper/wukuScrapper'
 const penyalinWuku = async (req: Request, res: Response) => {
   const { dayParams } = req
   try {
-    if (!dayParams) throw new Error('')
+    if (!dayParams) throw new Error('Invalid parameters')
     const wuku = await wukuScrapper(dayParams)
     if (!wuku)
       throw new Error(
@@ -14,7 +14,6 @@ const penyalinWuku = async (req: Request, res: Response) => {
     return res.status(200).json({ wuku })
   } catch (err) {
     return res.status(400).json({
-      status: 'FAILED',
       error: err.message,
     })
   }

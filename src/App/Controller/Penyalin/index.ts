@@ -18,3 +18,4 @@ export type Request = ExpressRequest<
 }
 
 export { default as penyalinWuku } from './penyalinWuku'
+export { default as penyalinSasih } from './penyalinSasih'
