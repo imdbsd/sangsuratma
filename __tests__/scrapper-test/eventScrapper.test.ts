@@ -1,9 +1,9 @@
-import eventScrapper from '../src/App/Scrapper/eventScrapper'
+import eventScrapper from '../../src/App/Scrapper/eventScrapper'
 import {
   EVENT_JANUARY_2020,
   MONTH_SCRAPPING_TEST,
   YEAR_SCRAPPING_TEST,
-} from './constants'
+} from '../constants'
 
 beforeEach(() => {
   jest.setTimeout(10000)

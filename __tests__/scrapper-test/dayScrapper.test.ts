@@ -3,15 +3,15 @@ import {
   DAY_SCRAPPING_TEST,
   MONTH_SCRAPPING_TEST,
   YEAR_SCRAPPING_TEST,
-} from './constants'
-import dayScrapper from '../src/App/Scrapper/DayScrapper/dayScrapper'
-import wukuScrapper from '../src/App/Scrapper/DayScrapper/wukuScrapper'
-import uripScrapper from '../src/App/Scrapper/DayScrapper/uripScrapper'
-import sasihScrapper from '../src/App/Scrapper/DayScrapper/sasihScrapper'
-import ingkelScrapper from '../src/App/Scrapper/DayScrapper/ingkelScrapper'
-import wewaranScrapper from '../src/App/Scrapper/DayScrapper/wewaranScrapper'
-import bhataraScrapper from '../src/App/Scrapper/DayScrapper/bhataraScrapper'
-import penanggalPangelongScrapper from '../src/App/Scrapper/DayScrapper/penanggalPangelongScrapper'
+} from '../constants'
+import dayScrapper from '../../src/App/Scrapper/DayScrapper/dayScrapper'
+import wukuScrapper from '../../src/App/Scrapper/DayScrapper/wukuScrapper'
+import uripScrapper from '../../src/App/Scrapper/DayScrapper/uripScrapper'
+import sasihScrapper from '../../src/App/Scrapper/DayScrapper/sasihScrapper'
+import ingkelScrapper from '../../src/App/Scrapper/DayScrapper/ingkelScrapper'
+import wewaranScrapper from '../../src/App/Scrapper/DayScrapper/wewaranScrapper'
+import bhataraScrapper from '../../src/App/Scrapper/DayScrapper/bhataraScrapper'
+import penanggalPangelongScrapper from '../../src/App/Scrapper/DayScrapper/penanggalPangelongScrapper'
 
 describe('Day Scrapper Test', () => {
   beforeEach(() => {
