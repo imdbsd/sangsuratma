@@ -17,7 +17,10 @@ export type Request = ExpressRequest<
   dayParams?: DayScrapperParams
 }
 
+export { default as penyalinUrip } from './penyalinUrip'
 export { default as penyalinWuku } from './penyalinWuku'
 export { default as penyalinSasih } from './penyalinSasih'
 export { default as penyalinIngkel } from './penyalinIngkel'
 export { default as penyalinBhatara } from './penyalinBhatara'
+export { default as penyalinWewaran } from './penyalinWewaran'
+export { default as penyalinPenanggalPangelong } from './penyalinPenanggalPangelong'
