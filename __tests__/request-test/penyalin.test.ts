@@ -19,7 +19,7 @@ describe('API requests test', () => {
     expect(res.status).toBe(200)
     expect(res.header['content-type']).toContain('application/json')
     expect(res.body).toStrictEqual({
-      wuku: DAY_22_JANUARY_2020.sasih,
+      sasih: DAY_22_JANUARY_2020.sasih,
     })
   })
 })
