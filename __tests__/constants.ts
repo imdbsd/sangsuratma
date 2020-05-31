@@ -103,3 +103,5 @@ export const DAY_22_JANUARY_2020 = {
   urip: '7+9',
   bhatara: 'Bhatara Asmara',
 }
+
+export const queryString = 'date=22&month=1&year=2020'
