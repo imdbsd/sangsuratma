@@ -77,4 +77,12 @@ describe('API requests test', () => {
       penanggalPangelong: DAY_22_JANUARY_2020.penanggal_pangelong,
     })
   })
+
+  test('Request day data from 22 Januari 2020', async () => {
+    const res = await request(app).get(`/penyalin/day?${queryString}`)
+
+    expect(res.status).toBe(200)
+    expect(res.header['content-type']).toContain('application/json')
+    expect(res.body).toStrictEqual(DAY_22_JANUARY_2020)
+  })
 })
