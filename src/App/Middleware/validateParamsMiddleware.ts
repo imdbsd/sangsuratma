@@ -17,7 +17,7 @@ const validateParamsMiddleware = async (
     })
     const isValid = await validateDayParams(req.query)
     if (isValid) {
-      req.dayParams = parseDayParams(req.query, canExcludeDate)
+      req.dayParams = parseDayParams(req.query)
       next()
     }
   } catch (err) {

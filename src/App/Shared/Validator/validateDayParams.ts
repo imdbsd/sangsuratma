@@ -39,7 +39,9 @@ const paramsSchema = (options: Options) =>
 
 const validateDayParams: ValidateDayParams = (options) => async (params) => {
   try {
-    const validate = await paramsSchema(options).validate(params)
+    const validate = await paramsSchema({
+      requireDate: options.requireDate || typeof params.date !== 'undefined',
+    }).validate(params)
     const isValid = !!validate
     return isValid
   } catch (err) {
