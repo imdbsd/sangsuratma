@@ -1,7 +1,9 @@
 import { Response } from 'express'
 import { Request } from '../Controller/Penyalin'
-import validateDayParams from '../Shared/Validator/validateDayParams'
+import initValidator from '../Shared/Validator/validateDayParams'
 import { parseDayParams } from '../Shared/Parser'
+
+const pathThatAllowedWithoutDate = ['/events']
 
 const validateParamsMiddleware = async (
   req: Request,
@@ -9,15 +11,17 @@ const validateParamsMiddleware = async (
   next: Function
 ) => {
   try {
+    const canExcludeDate = pathThatAllowedWithoutDate.includes(req.path)
+    const validateDayParams = initValidator({
+      requireDate: !canExcludeDate,
+    })
     const isValid = await validateDayParams(req.query)
     if (isValid) {
       req.dayParams = parseDayParams(req.query)
       next()
     }
   } catch (err) {
-    console.log({ err })
     res.status(400).json({
-      status: 'FAILED',
       error: err.message,
     })
   }

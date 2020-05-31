@@ -73,7 +73,6 @@ const eventScrapper: EventScrapper = async (params) => {
 
     return events
   } catch (e) {
-    console.log(e)
     return null
   }
 }

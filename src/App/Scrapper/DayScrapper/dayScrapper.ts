@@ -25,7 +25,14 @@ const dayScrapper: DayScrapper = async (params) => {
     const wewaran = await wewaranScrapper(params)
     const penanggalPangelong = await penanggalPangelongScrapper(params)
 
-    if (!wewaran || !penanggalPangelong || !wuku || !ingkel || !bhatara)
+    if (
+      !wewaran ||
+      !penanggalPangelong ||
+      !wuku ||
+      !ingkel ||
+      !bhatara ||
+      !params.date
+    )
       throw new Error('Failed to fetch')
 
     const scrappedDay = new Date()

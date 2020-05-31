@@ -3,14 +3,22 @@ import parseDateNumber from './parseDateNumber'
 import { DayScrapperParams } from '../../types'
 
 export type DayParamsShape = {
-  date: string
+  date?: string
   month: string
   year: string
 }
 
-const parseParams = (params: DayParamsShape): DayScrapperParams => {
-  const date = parseDateNumber(params.date)
+const parseDayParams = (params: DayParamsShape): DayScrapperParams => {
   const month = parseMonth(params.month)
+  if (!params.date) {
+    if (!month) throw new Error('Cannot parse params')
+    return {
+      month,
+      year: parseInt(params.year),
+    }
+  }
+
+  const date = parseDateNumber(params.date)
   if (!date || !month) throw new Error('Cannot parse params')
   return {
     date,
@@ -19,4 +27,4 @@ const parseParams = (params: DayParamsShape): DayScrapperParams => {
   }
 }
 
-export default parseParams
+export default parseDayParams

@@ -104,4 +104,21 @@ export const DAY_22_JANUARY_2020 = {
   bhatara: 'Bhatara Asmara',
 }
 
-export const queryString = 'date=22&month=1&year=2020'
+export const EVENT_15_JANUARY_2020 = [
+  {
+    eventName: 'Hari Buda Kliwon Gumbreg',
+    eventType: 'rerainan',
+    timestamp: '2020-01-15T00:00:00.000Z',
+  },
+  {
+    eventName: 'Kajeng Kliwon Enyitan',
+    eventType: 'rerainan',
+    timestamp: '2020-01-15T00:00:00.000Z',
+  },
+]
+
+export const queryString = {
+  '15_JANUARY_2020': 'date=15&month=1&year=2020',
+  '22_JANUARY_2020': 'date=22&month=1&year=2020',
+  JANUARY_2020: 'month=1&year=2020',
+}
