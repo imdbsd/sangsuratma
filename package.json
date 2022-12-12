@@ -30,7 +30,7 @@
     "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.3",
     "date-fns": "^2.13.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "redis": "^3.0.2",
     "supertest": "^4.0.2",
     "yup": "^0.28.5"
